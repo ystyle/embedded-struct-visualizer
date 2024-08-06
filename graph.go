@@ -18,7 +18,7 @@ rankdir="%s"
 		}
 		g = append(g, getFullStructName(s.Name, s.Package)+" -> { "...)
 		for e := range s.Embeds {
-			if IsExcludePkg(e) {
+			if IsExcludePkg(e, s.Package) {
 				continue
 			}
 			g = append(g, getFullStructName(e, s.Package)+" "...)

@@ -20,15 +20,19 @@ func parseExcludeConfig(filename string) error {
 	return nil
 }
 
-func IsExcludePkg(pkg string) bool {
+func IsExcludePkg(structName, pack string) bool {
+	var full = structName
+	if !strings.Contains(structName, ".") {
+		full = pack + "." + structName
+	}
 	for _, expkg := range excludePkg {
 		if strings.HasPrefix(expkg, "prefix:") {
 			ex := strings.TrimPrefix(expkg, "prefix:")
-			if strings.HasPrefix(pkg, ex) {
+			if strings.HasPrefix(full, ex) {
 				return true
 			}
 		} else {
-			if expkg == pkg {
+			if expkg == full {
 				return true
 			}
 		}
