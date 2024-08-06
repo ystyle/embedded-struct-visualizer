@@ -71,6 +71,7 @@ func help() {
 	fmt.Printf("If the directory to scan is not provided, it defaults to './'\n")
 	fmt.Printf("OPTIONS:\n")
 	fmt.Printf("  -out <file>  path to output file (default: write to stdout)\n")
+	fmt.Printf("  -rankdir <direction> graphs direction (default: LR, enum: TB,LR,BT,RL)\n")
 	fmt.Printf("  -exclude-pkg path to exclude pkg config file, format(default: empty):\n")
 	fmt.Printf("     eg: exclude gopkg.in/guregu/null.v3 and models/MyStuct\n")
 	fmt.Printf("       prefix:null.\n")
